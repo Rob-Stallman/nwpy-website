@@ -1,0 +1,54 @@
+body {
+    background-color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0px;
+}
+header {
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+    vertical-align: middle;
+    background-color: #c5c5c5;
+    position: absolute;
+}
+header #logo {
+    font-size: xx-large;
+    text-align: center;
+    width: fit-content;
+    padding: 10px 0;
+    margin: 0 auto;
+}
+aside {
+    width: 15%;
+    height: 100%;
+    padding: 57px 5px 100% 5px;
+    float: left;
+    box-shadow: inset -5px 0px 12px 0px #f7f7f7;
+    text-align: center;
+}
+.options{
+    text-align: left;
+    font-size: x-small;
+}
+.green {
+    color: #66b95e;
+}
+.instructions{
+    text-align: center;
+
+}
+.catalog {
+    text-align: center;
+}
+.row1 td{
+    position: relative;
+    top: 57px;
+    left: 20px;
+    width: 300px;
+}
+.eg {
+    cursor: pointer;
+    height: 300px;
+    width: 200px;
+    border: 3px solid #000000;
+}

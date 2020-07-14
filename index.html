@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="resources/css/style.css">
+    <title>NWPY</title>
+</head>
+<body>
+    <header id='main-header'>
+        <h1 class='green' id='logo'>NWPY</h1>
+    </header>
+    <aside>
+        <h3>Filter</h3>
+        <form>
+            <h5>Recycled Strategy</h5>
+            <div class="options">
+                <input type="checkbox" id="OT" name="recycle_strategy">
+                <label for="OT">Once-through</label><br>
+                <input type="checkbox" id="LR" name="recycle_strategy">
+                <label for="LR">Limited-recycle</label><br>
+                <input type="checkbox" id="CR" name="recycle_strategy">
+                <label for="CR">Continuous-recycle</label><br>
+            </div>
+            <h5>Irradiation Environment</h5>
+            <div class="options">
+                <input type="checkbox" id="critical" name="irradiation_environment">
+                <label for="critical">Critical</label><br>
+                <input type="checkbox" id="sub-critical" name="irradiation_environment">
+                <label for="sub-critical">Sub-critical</label><br>
+            </div>
+            <h5>Neutron Spectrum</h5>
+            <div class="options">
+                <input type="checkbox" id="thermal" name="spectrum">
+                <label for="thermal">Thermal</label><br>
+                <input type="checkbox" id="fast" name="spectrum">
+                <label for="fast">Fast</label><br>
+            </div>
+            <h5>Feed Element</h5>
+            <div class="options">
+                <input type="checkbox" id="U" name="feed_element">
+                <label for="U">Uranium</label><br>
+                <input type="checkbox" id="Th" name="feed_element">
+                <label for="Th">Thorium</label><br>
+                <input type="checkbox" id="Pu" name="feed_element">
+                <label for="Pu">Plutonium</label><br>
+            </div>
+            <h5>Enrichment</h5>
+            <div class="options">
+                <input type="checkbox" id="Yes" name="enrichment">
+                <label for="Yes">Yes</label><br>
+                <input type="checkbox" id="No" name="enrichment">
+                <label for="No">No</label><br>
+            </div>
+        </form>
+    </aside>
+    <main>
+        <section class="instructions">
+            <p>Select one or more evaluation groups to learn more.</p>
+        </section>
+        <section class="catelog">
+            <table>
+                <tr class="row1">
+                    <td>
+                        <p>eg01 coming soon</p>
+                </tr>
+            </table>
+            <!--
+            <div class="eg">
+                <p>eg01 coming soon</p>
+            </div>
+            <div class="eg">
+                <p>eg02 coming soon</p>
+            </div>
+            <div class="eg">
+                <p>eg03 coming soon</p>
+            </div>
+            <div class="eg">
+                <p>eg04 coming soon</p>
+            </div>
+            <div class="eg">
+                <p>eg05 coming soon</p>
+            </div>
+            <div class="eg">
+                <p>eg06 coming soon</p>
+            </div>
+            <div class="eg">
+                <p>eg07 coming soon</p>
+            </div>
+            <div class="eg">
+                <p>eg08 coming soon</p>
+            </div>
+            <div class="eg">
+                <p>eg09 coming soon</p>
+            </div>
+            <div class="eg">
+                <p>eg10 coming soon</p>
+            </div>
+            <div class="eg">
+                <p>eg11 coming soon</p>
+            </div>
+            <div class="eg">
+                <p>eg12 coming soon</p>
+            </div>
+            <div class="eg">
+                <p>eg13 coming soon</p>
+            </div>
+            <div class="eg">
+                <p>eg14 coming soon</p>
+            </div>
+            <div class="eg">
+                <p>eg15 coming soon</p>
+            </div>
+            <div class="eg">
+                <p>eg16 coming soon</p>
+            </div>
+            <div class="eg">
+                <p>eg17 coming soon</p>
+            </div>
+            <div class="eg">
+                <p>eg18 coming soon</p>
+            </div>
+            <div class="eg">
+                <p>eg19 coming soon</p>
+            </div>
+            <div class="eg">
+                <p>eg20 coming soon</p>
+            </div>
+            <div class="eg">
+                <p>eg21 coming soon</p>
+            </div>
+            <div class="eg">
+                <p>eg22 coming soon</p>
+            </div>
+            <div class="eg">
+                <p>eg23 coming soon</p>
+            </div>
+            <div class="eg">
+                <p>eg24 coming soon</p>
+            </div>
+            <div class="eg">
+                <p>eg25 coming soon</p>
+            </div>
+            <div class="eg">
+                <p>eg26 coming soon</p>
+            </div>
+            <div class="eg">
+                <p>eg27 coming soon</p>
+            </div>
+            <div class="eg">
+                <p>eg28 coming soon</p>
+            </div>
+            <div class="eg">
+                <p>eg29 coming soon</p>
+            </div>
+            <div class="eg">
+                <p>eg30 coming soon</p>
+            </div>
+            <div class="eg">
+                <p>eg31 coming soon</p>
+            </div>
+            <div class="eg">
+                <p>eg32 coming soon</p>
+            </div>
+            <div class="eg">
+                <p>eg33 coming soon</p>
+            </div>
+            <div class="eg">
+                <p>eg34 coming soon</p>
+            </div>
+            <div class="eg">
+                <p>eg35 coming soon</p>
+            </div>
+            <div class="eg">
+                <p>eg36 coming soon</p>
+            </div>
+            <div class="eg">
+                <p>eg37 coming soon</p>
+            </div>
+            <div class="eg">
+                <p>eg38 coming soon</p>
+            </div>
+            <div class="eg">
+                <p>eg39 coming soon</p>
+            </div>
+            <div class="eg">
+                <p>eg40 coming soon</p>
+            </div>
+            -->  
+        </section>
+    </main>
+</body>
+</html>
