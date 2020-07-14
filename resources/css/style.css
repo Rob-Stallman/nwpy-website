@@ -25,6 +25,7 @@ aside {
     float: left;
     box-shadow: inset -5px 0px 12px 0px #f7f7f7;
     text-align: center;
+    visibility: hidden;
 }
 .options{
     text-align: left;
