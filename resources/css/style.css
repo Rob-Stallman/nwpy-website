@@ -37,7 +37,7 @@ header {
     text-align: center;
     background-color: #c5c5c5;
     color: #66b95e;
-    padding: .625em;
+    padding: 2em;
 }
 
 aside {
@@ -63,7 +63,7 @@ aside {
     display: grid;
     row-gap: 2em;
     column-gap: 2em;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: auto auto auto auto auto;
     padding: 3em;
 }
 
