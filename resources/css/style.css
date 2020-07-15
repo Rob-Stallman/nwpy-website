@@ -1,54 +1,80 @@
+/*****************************************************************************/
+/*
+/* Common
+/*
+/*****************************************************************************/
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
 body {
+    color: #616161;
     background-color: #ffffff;
     font-family: Arial, Helvetica, sans-serif;
-    margin: 0px;
+    font-weight: 500;
+    font-size: 0.75em;
+    overflow: scroll;
 }
-header {
-    display: inline-block;
-    text-align: center;
+/*****************************************************************************/
+/*
+/* Site
+/*
+/*****************************************************************************/
+.site {
+    height: 100%;
     width: 100%;
-    vertical-align: middle;
-    background-color: #c5c5c5;
-    position: absolute;
+    line-height: 1.25em;
 }
-header #logo {
-    font-size: xx-large;
+
+header {
+    display: block;
     text-align: center;
-    width: fit-content;
-    padding: 10px 0;
-    margin: 0 auto;
+    background-color: #c5c5c5;
+    color: #66b95e;
+    padding: .625em;
 }
+
 aside {
+    text-align: center;
+    float: left;
     width: 15%;
     height: 100%;
-    padding: 57px 5px 100% 5px;
-    float: left;
+    padding: 1em;
     box-shadow: inset -5px 0px 12px 0px #f7f7f7;
-    text-align: center;
 }
+
 .options{
     text-align: left;
     font-size: x-small;
 }
-.green {
-    color: #66b95e;
-}
-.instructions{
-    text-align: center;
 
-}
-.catalog {
+.catelog-container {
     text-align: center;
+    padding-top: 2em;
 }
-.row1 td{
-    position: relative;
-    top: 57px;
-    left: 20px;
-    width: 300px;
+
+.catelog {
+    display: grid;
+    row-gap: 2em;
+    column-gap: 2em;
+    grid-template-columns: auto auto auto;
+    padding: 3em;
 }
-.eg {
-    cursor: pointer;
-    height: 300px;
-    width: 200px;
-    border: 3px solid #000000;
+
+.catelog-item {
+    font-size: 1.5em;
+    font-weight: 900;
+    padding: 3em;
+    border: #616161 solid .15em;
+}
+
+.catelog-item:hover{
+    background-color: #dddddd;
+    color: #616161
 }
