@@ -54,12 +54,12 @@ aside {
     font-size: x-small;
 }
 
-.catelog-container {
+.catalog-container {
     text-align: center;
     padding-top: 2em;
 }
 
-.catelog {
+.catalog {
     display: grid;
     row-gap: 2em;
     column-gap: 2em;
@@ -67,14 +67,28 @@ aside {
     padding: 3em;
 }
 
-.catelog-item {
+.catalog-item {
     font-size: 1.5em;
     font-weight: 900;
     padding: 3em;
     border: #616161 solid .15em;
 }
 
-.catelog-item:hover{
+/*
+.catalog-item:hover{
     background-color: #dddddd;
-    color: #616161
+    color: #616161;
+}
+*/
+
+.catalog-item p {
+    vertical-align: top;
+}
+
+.catalog-item .compare {
+    vertical-align: bottom;
+}
+
+.compare-button{
+    display: none;
 }
