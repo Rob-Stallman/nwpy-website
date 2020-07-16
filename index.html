@@ -8,12 +8,14 @@
     <title>NWPY</title>
 </head>
 <body>
-    <div class="site">
-        <header>
-            <h1>NWPY</h1>
-        </header>
-        <aside>
-            <h3>Filter</h3>
+    <header>
+        <h1>NWPY</h1>
+    </header>
+    <main>
+        <div class="filter container">
+            <div class="title">
+                <h3>Filter</h3>
+            </div>
             <form>
                 <h5>Recycled Strategy</h5>
                 <div class="options">
@@ -40,12 +42,12 @@
                 </div>
                 <h5>Feed Element</h5>
                 <div class="options">
-                    <input type="checkbox" id="U" name="feed_element">
-                    <label for="U">Uranium</label><br>
-                    <input type="checkbox" id="Th" name="feed_element">
-                    <label for="Th">Thorium</label><br>
-                    <input type="checkbox" id="Pu" name="feed_element">
-                    <label for="Pu">Plutonium</label><br>
+                    <input type="checkbox" id="FE_U" name="feed_element">
+                    <label for="FE_U">Uranium</label><br>
+                    <input type="checkbox" id="FE_Th" name="feed_element">
+                    <label for="FE_Th">Thorium</label><br>
+                    <input type="checkbox" id="FE_UTh" name="feed_element">
+                    <label for="FE_UTh">Thorium</label><br>
                 </div>
                 <h5>Enrichment</h5>
                 <div class="options">
@@ -54,19 +56,28 @@
                     <input type="checkbox" id="No" name="enrichment">
                     <label for="No">No</label><br>
                 </div>
-                <input type="submit" value="Filter">
+                <h5>Recycled Element</h5>
+                <div class="options">
+                    <input type="checkbox" id="RE_U" name="recycled_element">
+                    <label for="RE_U">Uranium</label><br>
+                    <input type="checkbox" id="RE_Pu" name="recycled_element">
+                    <label for="RE_Pu">Plutonium</label><br>
+                    <input type="checkbox" id="RE_TRU" name="recycled_element">
+                    <label for="RE_TRU">Transuranics</label>
+                </div>
+                <br><input type="submit" value="Filter">
             </form>
-        </aside>
-        <div class="catalog-container">
-            <h1>Catalog</h1>
-            <div class="catalog">
+        </div>
+        <div class="catalog container">
+            <div class="title">
+                <h1>Catalog</h1>
+            </div>
+            <form>
                 <div class="catalog-item" id="catalog-EG01">
                     <p>EG01</p>
                     <div class="compare-button" id="compare-EG01">
-                        <form>
-                            <input type="checkbox" name="compare">
-                            <label for="compare-EG01">Compare</label>
-                        </form>
+                        <input type="checkbox" name="compare">
+                        <label for="compare-EG01">Compare</label>
                     </div>
                 </div>
                 <p class="catalog-item">EG02</p>
@@ -108,8 +119,9 @@
                 <p class="catalog-item">EG38</p>
                 <p class="catalog-item">EG39</p>
                 <p class="catalog-item">EG40</p>
-            </div>
+                <input type="submit" value="Compare">
+            </form>
         </div>
-    </div>
+    </main>
 </body>
 </html>

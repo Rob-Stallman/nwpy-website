@@ -17,61 +17,71 @@ body {
     color: #616161;
     background-color: #ffffff;
     font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
     font-weight: 500;
-    font-size: 0.75em;
     overflow: scroll;
 }
+
+header {
+    position: fixed;
+    width: 100%;
+    padding: 1em;
+    z-index: 2;
+    text-align: center;
+    background-color: #c5c5c5;
+    color: #66b95e;
+}
+
+main {
+    position: relative;
+    top: 69px;
+    height: 100%;
+    width: 100%;
+    line-height: 1.25em;
+    font-size: .75em;
+}
+
 /*****************************************************************************/
 /*
 /* Site
 /*
 /*****************************************************************************/
-.site {
-    height: 100%;
-    width: 100%;
-    line-height: 1.25em;
+
+.title {
+    padding: 1em 0em;
 }
 
-header {
-    display: block;
+.container {
+    display: inline;
     text-align: center;
-    background-color: #c5c5c5;
-    color: #66b95e;
-    padding: 2em;
 }
 
-aside {
-    text-align: center;
+.filter {
+    position: fixed;
     float: left;
     width: 15%;
     height: 100%;
-    padding: 1em;
     box-shadow: inset -5px 0px 12px 0px #f7f7f7;
 }
 
 .options{
     text-align: left;
     font-size: x-small;
-}
-
-.catalog-container {
-    text-align: center;
-    padding-top: 2em;
+    margin: 0em 1.5em;
 }
 
 .catalog {
-    display: grid;
-    row-gap: 2em;
-    column-gap: 2em;
-    grid-template-columns: auto auto auto auto auto;
-    padding: 3em;
+    float: right;
+    width: 85%;
 }
 
 .catalog-item {
     font-size: 1.5em;
     font-weight: 900;
-    padding: 3em;
+    padding: 1.5em;
+    margin: 1em 3em;
     border: #616161 solid .15em;
+    cursor: pointer;
 }
 
 /*
