@@ -1,19 +1,17 @@
 /*****************************************************************************/
 /*
-/* Catelog
+/* Catalog
 /*
 /*****************************************************************************/
 
-let catalogEG01 = document.getElementById("catalog-EG01");
-let compareButtonEG01 = document.getElementById("compare-EG01");
+const catalogItems = document.getElementsByClassName("catalog-item");
+const compareButtons = document.getElementsByClassName("compare-button");
 
-let showCompareButton = function() {
-    compareButtonEG01.style.display = "block";
-};
-
-let hideCompareButton = function() {
-    compareButtonEG01.style.display = "none";
+for(let i=0; i<catalogItems.length; i++) {
+    catalogItems[i].onmouseenter = function() {
+        compareButtons[i].style.display = "block";
+    }
+    catalogItems[i].onmouseleave = function() {
+        compareButtons[i].style.display = "";
+    }
 }
-
-catalogEG01.onmouseenter = showCompareButton;
-catalogEG01.onmouseleave = hideCompareButton;

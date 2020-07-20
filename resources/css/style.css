@@ -28,7 +28,7 @@ header {
     padding: 1em;
     z-index: 2;
     text-align: center;
-    background-color: #c5c5c5;
+    background-color: #e4e4e4;
     color: #66b95e;
 }
 
@@ -62,6 +62,7 @@ main {
     width: 15%;
     height: 100%;
     box-shadow: inset -5px 0px 12px 0px #f7f7f7;
+    overflow-x: scroll;
 }
 
 .options{
@@ -76,29 +77,21 @@ main {
 }
 
 .catalog-item {
-    font-size: 1.5em;
-    font-weight: 900;
     padding: 1.5em;
     margin: 1em 3em;
     border: #616161 solid .15em;
     cursor: pointer;
 }
 
-/*
-.catalog-item:hover{
-    background-color: #dddddd;
-    color: #616161;
-}
-*/
-
-.catalog-item p {
-    vertical-align: top;
+.catalog-item h3 {
+    width: fit-content;
+    display: inline-block;
 }
 
-.catalog-item .compare {
-    vertical-align: bottom;
+.catalog-item h3:hover {
+    color: rgb(0, 128, 255)
 }
 
-.compare-button{
+.compare-button {
     display: none;
 }
