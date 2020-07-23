@@ -24,12 +24,20 @@ body {
 
 header {
     position: fixed;
+    top: 0;
     width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     padding: 1em;
     z-index: 2;
-    text-align: center;
     background-color: #e4e4e4;
+}
+
+header a {
+    padding: 0em 1em;
     color: #66b95e;
+    text-decoration: none;
 }
 
 main {
@@ -41,21 +49,20 @@ main {
     font-size: .75em;
 }
 
-/*****************************************************************************/
-/*
-/* Site
-/*
-/*****************************************************************************/
-
 .title {
     padding: 1em 0em;
+    text-decoration: underline;
 }
 
 .container {
     display: inline;
     text-align: center;
 }
-
+/*****************************************************************************/
+/*
+/* Catalog Page
+/*
+/*****************************************************************************/
 .filter {
     position: fixed;
     float: left;
@@ -74,24 +81,37 @@ main {
 .catalog {
     float: right;
     width: 85%;
+    padding-bottom: 2em;
 }
 
 .catalog-item {
     padding: 1.5em;
     margin: 1em 3em;
     border: #616161 solid .15em;
-    cursor: pointer;
 }
 
-.catalog-item h3 {
+.catalog-item a {
     width: fit-content;
     display: inline-block;
-}
+    font-size: 1.2em;
+    font-weight: 900;
+    text-decoration: none;
+    color: #616161;
 
-.catalog-item h3:hover {
-    color: rgb(0, 128, 255)
 }
 
 .compare-button {
     display: none;
 }
+/*****************************************************************************/
+/*
+/* About Page
+/*
+/*****************************************************************************/
+.about {
+    padding: 0em 1em 1em 1em;
+    border: .25em #353535 solid;
+    margin: 2em;
+    display: block;
+}
+
