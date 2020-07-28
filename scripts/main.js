@@ -16,6 +16,14 @@
 
 const catalogItems = document.getElementsByClassName("catalog-item");
 const compareButtonElems = document.getElementsByClassName("compare-button");
+const compareEG01 = document.getElementById('compare-EG01');
+compareEG01.onclick = function() {
+    if (compareEG01.checked) {
+        compareButtonElems[0].style.display = "block !important";
+    } else {
+        compareButtonElems[0].style.display = "";
+    }
+}
 
 for (let i=0; i<catalogItems.length; i++) {
     catalogItems[i].onmouseenter = function() {
