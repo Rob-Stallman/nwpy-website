@@ -16,14 +16,6 @@
 
 const catalogItems = document.getElementsByClassName("catalog-item");
 const compareButtonElems = document.getElementsByClassName("compare-button");
-const compareEG01 = document.getElementById('compare-EG01');
-compareEG01.onclick = function() {
-    if (compareEG01.checked) {
-        compareButtonElems[0].style.display = "block !important";
-    } else {
-        compareButtonElems[0].style.display = "";
-    }
-}
 
 for (let i=0; i<catalogItems.length; i++) {
     catalogItems[i].onmouseenter = function() {
@@ -416,258 +408,73 @@ evaluationGroups.push(EG40);
 
 // Create element objects for every filter button
 const OT = document.getElementById('OT');
+OT.stringToInclude = "OT";
 const LR = document.getElementById('LR');
+LR.stringToInclude = "L";
 const CR = document.getElementById('CR');
+CR.stringToInclude = "C";
 const critical = document.getElementById('critical');
+critical.stringToInclude = "C";
 const subCritical = document.getElementById('sub-critical');
+subCritical.stringToInclude = "S";
 const thermal = document.getElementById('thermal');
+thermal.stringToInclude = "T";
 const fast = document.getElementById('fast');
+fast.stringToInclude = "F";
 const feedU = document.getElementById('FE_U');
+feedU.stringToInclude = "U";
 const feedTh = document.getElementById('FE_Th');
+feedTh.stringToInclude = "Th";
 const feedUTh = document.getElementById('FE_UTh');
+feedUTh.stringToInclude = "UTh";
 const recycleU = document.getElementById('RE_U');
+recycleU.stringToInclude = "U3";
 const recyclePu = document.getElementById('RE_Pu');
+recyclePu.stringToInclude = "Pu";
 const recycleTRU = document.getElementById('RE_TRU');
+recycleTRU.stringToInclude = "TRU";
 const encrichYes = document.getElementById('Yes');
+encrichYes.stringToInclude = "Y";
 const encrichNo = document.getElementById('No');
+encrichNo.stringToInclude = "N";
 
 // Hide and display catalog items based on properties
-OT.onclick = function() {
-    if(OT.checked) {
-        evaluationGroups.forEach(elem => {
-            if (elem.recycleStrategy !== 'OT') {
-                elem.style.display = 'none';
-            };
-        });
-    } else {
-        evaluationGroups.forEach(elem => {
-            if (elem.recycleStrategy !== 'OT') {
-                elem.style.display = '';
-            };
-        });
-    };
+const filterOptions = {
+    recycleStrategy: [OT, LR, CR],
+    irradiationEnvironment: [critical, subCritical],
+    spectrum: [thermal, fast],
+    feedElement: [feedU, feedTh, feedUTh],
+    recycledElement: [recycleU, recyclePu, recycleTRU],
+    enrichment: [encrichYes, encrichNo]
 };
 
-LR.onclick = function() {
-    if(LR.checked) {
-        evaluationGroups.forEach(elem => {
-            if (!elem.recycleStrategy.includes('L')){
-                elem.style.display = 'none';
-            };
-        });
-    } else {
-        evaluationGroups.forEach(elem => {
-            if (!elem.recycleStrategy.includes('L')){
-                elem.style.display = '';
-            };
-        });
-    };
+function hideEG(optionObj, feature) {
+    evaluationGroups.forEach(group => {
+        if(!group[feature].includes(optionObj.stringToInclude)) {
+            group.style.display = 'none';
+        };
+    });
 };
 
-CR.onclick = function() {
-    if(CR.checked) {
-        evaluationGroups.forEach(elem => {
-            if (!elem.recycleStrategy.includes('C')){
-                elem.style.display = 'none';
-            };
-        });
-    } else {
-        evaluationGroups.forEach(elem => {
-            if (!elem.recycleStrategy.includes('C')){
-                elem.style.display = '';
-            };
-        });
-    };
+function showEG(optionObj, feature) {
+    evaluationGroups.forEach(group => {
+        if(!group[feature].includes(optionObj.stringToInclude)) {
+            group.style.display = '';
+        };
+    });
 };
 
-critical.onclick = function() {
-    if(critical.checked) {
-        evaluationGroups.forEach(elem => {
-            if (!elem.irradiationEnvironment.includes('C')){
-                elem.style.display = 'none';
-            };
-        });
-    } else {
-        evaluationGroups.forEach(elem => {
-            if (!elem.irradiationEnvironment.includes('C')){
-                elem.style.display = '';
-            };
-        });
-    };
-};
-
-subCritical.onclick = function() {
-    if(subCritical.checked) {
-        evaluationGroups.forEach(elem => {
-            if (!elem.irradiationEnvironment.includes('S')){
-                elem.style.display = 'none';
-            };
-        });
-    } else {
-        evaluationGroups.forEach(elem => {
-            if (!elem.irradiationEnvironment.includes('S')){
-                elem.style.display = '';
+function filterGroups() {
+    for (const discriminator in filterOptions) {
+        filterOptions[discriminator].forEach(button => {
+            button.onclick = function() {
+                if(button.checked) {
+                    hideEG(button, discriminator);
+                } else {
+                    showEG(button, discriminator);
+                };
             };
         });
     };
 };
-
-thermal.onclick = function() {
-    if(thermal.checked) {
-        evaluationGroups.forEach(elem => {
-            if (!elem.spectrum.includes('T')){
-                elem.style.display = 'none';
-            };
-        });
-    } else {
-        evaluationGroups.forEach(elem => {
-            if (!elem.spectrum.includes('T')){
-                elem.style.display = '';
-            };
-        });
-    };
-};
-
-fast.onclick = function() {
-    if(fast.checked) {
-        evaluationGroups.forEach(elem => {
-            if (!elem.spectrum.includes('F')){
-                elem.style.display = 'none';
-            };
-        });
-    } else {
-        evaluationGroups.forEach(elem => {
-            if (!elem.spectrum.includes('F')){
-                elem.style.display = '';
-            };
-        });
-    };
-};
-
-feedU.onclick = function() {
-    if(feedU.checked) {
-        evaluationGroups.forEach(elem => {
-            if (elem.feedElement !== 'U'){
-                elem.style.display = 'none';
-            };
-        });
-    } else {
-        evaluationGroups.forEach(elem => {
-            if (elem.feedElement !== 'U'){
-                elem.style.display = '';
-            };
-        });
-    };
-};
-
-feedTh.onclick = function() {
-    if(feedTh.checked) {
-        evaluationGroups.forEach(elem => {
-            if (elem.feedElement !== 'Th'){
-                elem.style.display = 'none';
-            };
-        });
-    } else {
-        evaluationGroups.forEach(elem => {
-            if (elem.feedElement !== 'Th'){
-                elem.style.display = '';
-            };
-        });
-    };
-};
-
-feedUTh.onclick = function() {
-    if(feedUTh.checked) {
-        evaluationGroups.forEach(elem => {
-            if (elem.feedElement !== 'UTh'){
-                elem.style.display = 'none';
-            };
-        });
-    } else {
-        evaluationGroups.forEach(elem => {
-            if (elem.feedElement !== 'UTh'){
-                elem.style.display = '';
-            };
-        });
-    };
-};
-
-recycleU.onclick = function() {
-    if(recycleU.checked) {
-        evaluationGroups.forEach(elem => {
-            if (elem.recycledElement !== 'U3'){
-                elem.style.display = 'none';
-            };
-        });
-    } else {
-        evaluationGroups.forEach(elem => {
-            if (elem.feedElement !== 'U3'){
-                elem.style.display = '';
-            };
-        });
-    };
-};
-
-recyclePu.onclick = function() {
-    if(recyclePu.checked) {
-        evaluationGroups.forEach(elem => {
-            if (elem.recycledElement !== 'Pu'){
-                elem.style.display = 'none';
-            };
-        });
-    } else {
-        evaluationGroups.forEach(elem => {
-            if (elem.feedElement !== 'Pu'){
-                elem.style.display = '';
-            };
-        });
-    };
-};
-
-recycleTRU.onclick = function() {
-    if(recycleTRU.checked) {
-        evaluationGroups.forEach(elem => {
-            if (elem.recycledElement !== 'TRU'){
-                elem.style.display = 'none';
-            };
-        });
-    } else {
-        evaluationGroups.forEach(elem => {
-            if (elem.feedElement !== 'TRU'){
-                elem.style.display = '';
-            };
-        });
-    };
-};
-
-encrichYes.onclick = function() {
-    if(encrichYes.checked) {
-        evaluationGroups.forEach(elem => {
-            if (elem.enrichment !== 'Y'){
-                elem.style.display = 'none';
-            };
-        });
-    } else {
-        evaluationGroups.forEach(elem => {
-            if (elem.enrichment !== 'Y'){
-                elem.style.display = '';
-            };
-        });
-    };
-};
-
-encrichNo.onclick = function() {
-    if(encrichNo.checked) {
-        evaluationGroups.forEach(elem => {
-            if (elem.enrichment !== 'N'){
-                elem.style.display = 'none';
-            };
-        });
-    } else {
-        evaluationGroups.forEach(elem => {
-            if (elem.enrichment !== 'N'){
-                elem.style.display = '';
-            };
-        });
-    };
-};
+filterGroups();
