@@ -5,6 +5,7 @@
 /*****************************************************************************/
 
 import { evaluationGroups } from "./EvaluationGroups.js";
+
 /*****************************************************************************/
 /*
 /* Catalog
@@ -14,22 +15,31 @@ import { evaluationGroups } from "./EvaluationGroups.js";
 const catalogItems = document.getElementsByClassName("catalog-item");
 const compareButtonElems = document.getElementsByClassName("compare-button");
 
-for (let i=0; i<catalogItems.length; i++) {
-    catalogItems[i].onmouseenter = function() {
-        compareButtonElems[i].style.display = "block";
+function revealCompareButtons() {
+    for (let i=0; i< catalogItems.length; i++) {
+        catalogItems[i].onmouseenter = function() {
+            compareButtonElems[i].style.display = "block";
+        };
+        catalogItems[i].onmouseleave = function() {
+            compareButtonElems[i].style.display = "";
+        };
     };
-    catalogItems[i].onmouseleave = function() {
-        compareButtonElems[i].style.display = "";
-    };
-    const origText = catalogItems[i].querySelector('a').innerHTML;
-    catalogItems[i].querySelector('a').onmouseenter = function() {
-        catalogItems[i].querySelector('a').innerHTML = "See More";
-    };
-    catalogItems[i].querySelector('a').onmouseleave = function() {
-        catalogItems[i].querySelector('a').innerHTML = origText;
-    };
-}
+};
 
+function changeText() {
+    for (let i=0; i<catalogItems.length; i++) {
+        const origText = catalogItems[i].querySelector('a').innerHTML;
+        catalogItems[i].querySelector('a').onmouseenter = function() {
+            catalogItems[i].querySelector('a').innerHTML = "See More";
+        };
+        catalogItems[i].querySelector('a').onmouseleave = function() {
+            catalogItems[i].querySelector('a').innerHTML = origText;
+        };
+    };
+};
+
+revealCompareButtons();
+changeText();
 /*****************************************************************************/
 /*
 /* Filter
