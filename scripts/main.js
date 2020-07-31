@@ -5,7 +5,6 @@
 /*****************************************************************************/
 
 import { evaluationGroups } from "./EvaluationGroups.js";
-alert(evaluationGroups[0].recycleStrategy);
 /*****************************************************************************/
 /*
 /* Catalog
