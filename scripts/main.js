@@ -12,34 +12,44 @@ import { evaluationGroups } from "./EvaluationGroups.js";
 /*
 /*****************************************************************************/
 
-const catalogItems = document.getElementsByClassName("catalog-item");
 const compareButtonElems = document.getElementsByClassName("compare-button");
+const compareButtons = document.getElementsByName("compare");
 
-function revealCompareButtons() {
-    for (let i=0; i< catalogItems.length; i++) {
-        catalogItems[i].onmouseenter = function() {
-            compareButtonElems[i].style.display = "block";
-        };
-        catalogItems[i].onmouseleave = function() {
-            compareButtonElems[i].style.display = "";
+function showCompareButton(buttonElem) {
+    return function() {
+        buttonElem.style.display = "block";
+    };
+};
+
+function hideCompareButton(buttonElem) {
+    buttonElem.style.display = "none";
+};
+
+function toggleCompareButtons() {
+    for (let i = 0; i < evaluationGroups.length; i++) {
+        evaluationGroups[i].onmouseenter = showCompareButton(compareButtonElems[i]);
+        evaluationGroups[i].onmouseleave = function() {
+            if (!compareButtons[i].checked) {
+                hideCompareButton(compareButtonElems[i]);
+            };
         };
     };
 };
 
 function changeText() {
-    for (let i=0; i<catalogItems.length; i++) {
-        const origText = catalogItems[i].querySelector('a').innerHTML;
-        catalogItems[i].querySelector('a').onmouseenter = function() {
-            catalogItems[i].querySelector('a').innerHTML = "See More";
+    for (let i=0; i<evaluationGroups.length; i++) {
+        const origText = evaluationGroups[i].querySelector('a').innerHTML;
+        evaluationGroups[i].querySelector('a').onmouseenter = function() {
+            evaluationGroups[i].querySelector('a').innerHTML = "See More";
         };
-        catalogItems[i].querySelector('a').onmouseleave = function() {
-            catalogItems[i].querySelector('a').innerHTML = origText;
+        evaluationGroups[i].querySelector('a').onmouseleave = function() {
+            evaluationGroups[i].querySelector('a').innerHTML = origText;
         };
     };
 };
 
-revealCompareButtons();
-changeText();
+window.onload = changeText;
+window.onload = toggleCompareButtons;
 /*****************************************************************************/
 /*
 /* Filter
