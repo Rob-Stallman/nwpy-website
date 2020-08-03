@@ -49,7 +49,7 @@ function changeText() {
 };
 
 window.onload = changeText;
-window.onload = toggleCompareButtons;
+window.addEventListener("load", toggleCompareButtons);
 /*****************************************************************************/
 /*
 /* Filter
